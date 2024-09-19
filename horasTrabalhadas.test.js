@@ -75,8 +75,8 @@ describe('HorasTrabalhadas', () => {
 
     describe('definirIntervaloAlmoco', () => {
         test('deve definir corretamente o intervalo de almoço', () => {
-            horasTrabalhadas.definirIntervaloAlmoco('12:00');
-            expect(horasTrabalhadas.intervaloAlmoco).toBe(720); // 12:00 em minutos
+            horasTrabalhadas.definirIntervaloAlmoco('01:00');
+            expect(horasTrabalhadas.intervaloAlmoco).toBe(60);
         });
 
         test('deve lançar erro para intervalo com formato inválido', () => {
@@ -92,7 +92,7 @@ describe('HorasTrabalhadas', () => {
 
         test('deve calcular corretamente as horas trabalhadas com intervalo', () => {
             horasTrabalhadas.definirHorarios('09:00', '17:00');
-            horasTrabalhadas.definirIntervaloAlmoco('01:00'); // Intervalo de almoço de 1 hora
+            horasTrabalhadas.definirIntervaloAlmoco('01:00');
             expect(horasTrabalhadas.calcularHorasTrabalhadas()).toBe('7h 0min');
         });
 
